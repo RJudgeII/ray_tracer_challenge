@@ -1,0 +1,17 @@
+[package]
+name = "ray_tracer_challenge"
+version = "0.1.0"
+edition = "2021"
+authors = ["Dick Judge <Dick.Judge@Outlook.com>"]
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+
+[dependencies]
+
+
+
+[dev-dependencies.cargo-husky]
+version="1.5.0"
+default-features=false
+features= ["prepush-hook", "run-for-all", "run-cargo-test", "run-cargo-clippy"]
