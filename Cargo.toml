@@ -8,7 +8,7 @@ authors = ["Dick Judge <Dick.Judge@Outlook.com>"]
 
 
 [dependencies]
-
+png = "0.17.5"
 
 
 [dev-dependencies.cargo-husky]

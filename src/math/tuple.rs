@@ -92,7 +92,7 @@ impl Add<Self> for Tuple {
     if self.is_point() && rhs.is_point() {
       panic!("Cannot add two points.");
     }
-    Tuple {
+    Self {
       x: self.x + rhs.x,
       y: self.y + rhs.y,
       z: self.z + rhs.z,
@@ -106,7 +106,7 @@ impl AddAssign<Self> for Tuple {
     if self.is_point() && rhs.is_point() {
       panic!("Cannot add two points.");
     }
-    *self = Tuple {
+    *self = Self {
       x: self.x + rhs.x,
       y: self.y + rhs.y,
       z: self.z + rhs.z,
@@ -122,7 +122,7 @@ impl Sub<Self> for Tuple {
     if self.is_vector() && rhs.is_point() {
       panic!("Cannot subtract a point from a vector.");
     }
-    Tuple {
+    Self {
       x: self.x - rhs.x,
       y: self.y - rhs.y,
       z: self.z - rhs.z,
@@ -136,7 +136,7 @@ impl SubAssign<Self> for Tuple {
     if self.is_vector() && rhs.is_point() {
       panic!("Cannot subtract a point from a vector.");
     }
-    *self = Tuple {
+    *self = Self {
       x: self.x - rhs.x,
       y: self.y - rhs.y,
       z: self.z - rhs.z,
@@ -149,7 +149,7 @@ impl Neg for Tuple {
   type Output = Self;
 
   fn neg(self) -> Self {
-    Tuple::new(-self.x, -self.y, -self.z, self.w)
+    Self::new(-self.x, -self.y, -self.z, self.w)
   }
 }
 
@@ -160,7 +160,7 @@ impl Mul<f64> for Tuple {
     if !self.is_vector() {
       panic!("Can only use the '*' operator with vectors, not points.");
     }
-    Tuple {
+    Self {
       x: self.x * scalar,
       y: self.y * scalar,
       z: self.z * scalar,
@@ -174,7 +174,7 @@ impl MulAssign<f64> for Tuple {
     if !self.is_vector() {
       panic!("Can only use the '*=' operator with vectors, not points.");
     }
-    *self = Tuple {
+    *self = Self {
       x: self.x * scalar,
       y: self.y * scalar,
       z: self.z * scalar,
@@ -190,7 +190,7 @@ impl Div<f64> for Tuple {
     if !self.is_vector() {
       panic!("Can only use the '/' operator with vectors, not points.");
     }
-    Tuple {
+    Self {
       x: self.x / scalar,
       y: self.y / scalar,
       z: self.z / scalar,
@@ -204,7 +204,7 @@ impl DivAssign<f64> for Tuple {
     if !self.is_vector() {
       panic!("Can only use the '/=' operator with vectors, not points.");
     }
-    *self = Tuple {
+    *self = Self {
       x: self.x / scalar,
       y: self.y / scalar,
       z: self.z / scalar,
